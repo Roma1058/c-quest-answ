@@ -1703,5 +1703,67 @@ struct Adder {
   • Дозволяє змінити реалізацію шаблону для окремих типів.
 </details>
 
+<details>
+  <summary><b>95. Що таке dynamic_cast та run-time type identification?</b></summary>
+  • <code>dynamic_cast</code> — оператор для безпечного приведення типів у спадковості з поліморфізмом.<br>
+  • Використовує Run-Time Type Identification (RTTI) — зберігає інформацію про реальний тип об'єкта під час виконання.<br>
+  • Працює тільки з віртуальними класами.
+</details>
+
+<details>
+  <summary><b>96. Що таке exception? Як кинути та зловити?</b></summary>
+  • Exception — це механізм обробки помилок у C++ через кидання винятків.<br>
+  • Кинути: <code>throw std::runtime_error("Помилка");</code><br>
+  • Зловити: <code>try { ... } catch (const std::exception&amp; e) { ... }</code>
+</details>
+
+<details>
+  <summary><b>97. Що буде, якщо кинути exception з конструктора? А з деструктора?</b></summary>
+  • З конструктора — об'єкт не буде створений, автоматично викликаються деструктори вже створених членів.<br>
+  • З деструктора — небезпечно! Якщо інший exception вже активний, програма завершиться через <code>std::terminate()</code>.
+</details>
+
+<details>
+  <summary><b>98. Що буде, якщо не зловити exception?</b></summary>
+  • Якщо виняток не зловлено, викликається <code>std::terminate()</code>, і програма аварійно завершується.
+</details>
+
+<details>
+  <summary><b>99. Що станеться, якщо exception вийде за межі блоку noexcept функції?</b></summary>
+  • Буде викликано <code>std::terminate()</code>, бо <code>noexcept</code> гарантує, що функція не кидає винятків.
+</details>
+
+<details>
+  <summary><b>100. Для чого можна використовувати приватне успадкування?</b></summary>
+  • Для реалізації "has-a" або "implemented-in-terms-of" відносин.<br>
+  • Наслідувані члени стають private в похідному класі.<br>
+  • Використовується, коли потрібно реалізувати функціональність без публічної інтерфейсної залежності.
+</details>
+
+<details>
+  <summary><b>101. Що таке контракт функції?</b></summary>
+  • Умова, яка описує припущення (preconditions) та гарантії (postconditions) функції.<br>
+  • C++20 дозволяє використовувати <code>[[expects]]</code> та <code>[[ensures]]</code> (поки не підтримується в більшості компіляторів).
+</details>
+
+<details>
+  <summary><b>102. Що таке vptr і vtable?</b></summary>
+  • <code>vptr</code> — вказівник на таблицю віртуальних функцій (vtable) об'єкта.<br>
+  • <code>vtable</code> — таблиця віртуальних функцій класу для підтримки поліморфізму.
+</details>
+
+<details>
+  <summary><b>103. Де міститься vptr?</b></summary>
+  • В кожному об'єкті класу з віртуальними функціями.<br>
+  • Зазвичай приховано як прихований член-компілятором.
+</details>
+
+<details>
+  <summary><b>104. Де міститься vtable?</b></summary>
+  • Одна на клас (з віртуальними функціями).<br>
+  • Зберігається в сегменті даних програми (static memory).
+</details>
+
+
 
 
