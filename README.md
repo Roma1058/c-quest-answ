@@ -777,6 +777,83 @@ DLL-файли можуть бути зареєстровані в систем�
   • Відокремлює алгоритм від структури даних.
 </details>
 
+# STL/Algorithms
+
+<details>
+  <summary><b>1. З чого складається STL?</b></summary>
+  • З контейнерів (vector, list, map тощо).<br>
+  • Ітераторів для доступу до елементів.<br>
+  • Алгоритмів (sort, find, copy тощо).<br>
+  • Функторів (function objects) та адаптерів.
+</details>
+
+<details>
+  <summary><b>2. Які алгоритми застосовували з STL? В чому перевага використання алгоритмів перед власноруч написаними функціями?</b></summary>
+  • Приклади: <code>std::sort</code>, <code>std::find</code>, <code>std::accumulate</code>.<br>
+  • Переваги: оптимізовані, загальні для різних контейнерів, менше помилок і більше читабельності.
+</details>
+
+<details>
+  <summary><b>3. Розкажіть про контейнери стандартної бібліотеки vector, list, map, unordered_map.</b></summary>
+  • <code>vector</code> — динамічний масив, швидкий доступ по індексу.<br>
+  • <code>list</code> — двозв'язний список, швидкі вставки/видалення в середині.<br>
+  • <code>map</code> — відсортовані пари ключ-значення (збалансоване дерево).<br>
+  • <code>unordered_map</code> — хеш-таблиця для швидкого доступу по ключу.
+</details>
+
+<details>
+  <summary><b>4. Які знаєте типи ітераторів? Чим вони відрізняються? В яких контейнерах використовуються?</b></summary>
+  • Input, Output, Forward, Bidirectional, Random Access.<br>
+  • Наприклад: <code>vector</code> — Random Access, <code>list</code> — Bidirectional.<br>
+  • Тип ітератора визначає можливості (++, --, +n, порівняння тощо).
+</details>
+
+<details>
+  <summary><b>5. Яка різниця між std::set, std::map, std::unordered_multimap?</b></summary>
+  • <code>set</code> — зберігає унікальні значення, відсортовані.<br>
+  • <code>map</code> — пари ключ-значення, ключі унікальні, відсортовані.<br>
+  • <code>unordered_multimap</code> — хеш-таблиця, допускає однакові ключі, порядок не гарантується.
+</details>
+
+<details>
+  <summary><b>6. Що таке ідіома remove-erase?</b></summary>
+  • Два кроки: <code>std::remove_if</code> переміщає "видалені" елементи в кінець, повертає новий кінець.<br>
+  • Потім <code>container.erase</code> остаточно видаляє ці елементи.
+</details>
+
+<details>
+  <summary><b>7. Як отримати найменше значення типу?</b></summary>
+  • Використати <code>std::numeric_limits&lt;T&gt;::min()</code> для числових типів.<br>
+  • Для unsigned мінімум — 0.
+</details>
+
+<details>
+  <summary><b>8. Яка різниця між std::map та std::hashmap?</b></summary>
+  • У стандарті немає <code>std::hashmap</code>, є <code>std::unordered_map</code> (на основі хеш-таблиці).<br>
+  • <code>std::map</code> тримає елементи відсортованими (звичайно Red-Black Tree), доступ O(log n).<br>
+  • <code>std::unordered_map</code> має амортизований доступ O(1), порядок елементів не гарантований.
+</details>
+
+<details>
+  <summary><b>9. Як підрахувати кількість елементів у std::list?</b></summary>
+  • Використати <code>list.size()</code>, який має O(1) для std::list.
+</details>
+
+<details>
+  <summary><b>10. Що таке складність алгоритму та від чого вона залежить?</b></summary>
+  • Складність показує, як швидко росте час або пам’ять при збільшенні розміру задачі.<br>
+  • Залежить від структури даних, входів та конкретної реалізації алгоритму.
+</details>
+
+<details>
+  <summary><b>11. В чому різниця між vector та list і у яких випадках їх краще використовувати?</b></summary>
+  • <code>vector</code> швидкий для доступу по індексу та push_back.<br>
+  • <code>list</code> ефективний для вставок/видалень всередині.<br>
+  • Використовувати <code>vector</code>, якщо переважає доступ по індексу або потрібна локальність пам’яті.<br>
+  • Використовувати <code>list</code> для частих вставок/видалень у середині послідовності.
+</details>
+
+
 # С
 
 <details> <summary><b>1. Як static впливає на глобальні/локальні змінні?</b></summary>
