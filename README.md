@@ -853,6 +853,94 @@ DLL-файли можуть бути зареєстровані в систем�
   • Використовувати <code>list</code> для частих вставок/видалень у середині послідовності.
 </details>
 
+<details>
+  <summary><b>12. Які алгоритми з STL використовували? Яких не вистачає?</b></summary>
+  • Використовував <code>std::sort</code>, <code>std::find</code>, <code>std::transform</code>, <code>std::accumulate</code>.<br>
+  • Не вистачає власних специфічних алгоритмів (наприклад, для графів), їх треба писати самостійно.
+</details>
+
+<details>
+  <summary><b>13. Якими особливостями має володіти клас, щоб він був ітератором?</b></summary>
+  • Повинен підтримувати оператори <code>*</code>, <code>++</code>, <code>!=</code>.<br>
+  • Повинен визначати типи через <code>typedef</code> або <code>using</code> (iterator_traits).
+</details>
+
+<details>
+  <summary><b>14. Які бувають ітератори?</b></summary>
+  • Input, Output, Forward, Bidirectional, Random Access.<br>
+  • Розрізняються можливістю переміщення, доступу та модифікації елементів.
+</details>
+
+<details>
+  <summary><b>15. Розкажіть про інвалідацію ітераторів.</b></summary>
+  • Ітератор стає недійсним після операцій, що змінюють контейнер (insert, erase, resize).<br>
+  • Наприклад, <code>vector.push_back</code> може перемістити буфер, що зробить старі ітератори недійсними.
+</details>
+
+<details>
+  <summary><b>16. Як оптимізувати видалення елемента з середини вектора?</b></summary>
+  • Перемістити останній елемент на місце видаленого, потім видалити останній (<code>pop_back</code>).<br>
+  • Підходить, якщо порядок елементів не важливий.
+</details>
+
+<details>
+  <summary><b>17. Як реалізований vector?</b></summary>
+  • Як динамічний масив із запасом пам’яті (capacity).<br>
+  • При перевищенні capacity виділяється новий блок пам’яті та копіюються елементи.
+</details>
+
+<details>
+  <summary><b>18. Як реалізований list?</b></summary>
+  • Як двозв'язний список із вузлами, що містять покажчики на попередній і наступний елемент.<br>
+  • Дозволяє швидкі вставки та видалення у будь-якому місці.
+</details>
+
+<details>
+  <summary><b>19. Як розширити STL-контейнери?</b></summary>
+  • Через спадкування (не рекомендується для STL-контейнерів).<br>
+  • Зазвичай використовують композицію — створюють клас із контейнером усередині.
+</details>
+
+<details>
+  <summary><b>20. Які є алгоритми в STL?</b></summary>
+  • <code>std::sort</code>, <code>std::find</code>, <code>std::count</code>, <code>std::unique</code>, <code>std::reverse</code> та інші.<br>
+  • Для роботи з контейнерами через ітератори.
+</details>
+
+<details>
+  <summary><b>21. В чому різниця між vector, deque, list, set в STL?</b></summary>
+  • <code>vector</code> — динамічний масив, швидкий доступ по індексу.<br>
+  • <code>deque</code> — двобічна черга, швидке <code>push_front</code> та <code>push_back</code>.<br>
+  • <code>list</code> — двозв'язний список, швидкі вставки/видалення.<br>
+  • <code>set</code> — збалансоване дерево для унікальних елементів, відсортованих.
+</details>
+
+<details>
+  <summary><b>22. Коли треба використовувати map? Коли — unordered_map? Яка складність пошуку і вставки в цих контейнерах?</b></summary>
+  • <code>map</code> — коли потрібен відсортований порядок (O(log n)).<br>
+  • <code>unordered_map</code> — коли порядок не важливий, але потрібна швидкість (амортизовано O(1)).
+</details>
+
+<details>
+  <summary><b>23. Як перевірити, чи є в контейнері елементи? Чому виклик container.size() є поганою практикою?</b></summary>
+  • Краще використовувати <code>empty()</code>, бо він завжди O(1).<br>
+  • <code>size()</code> може бути O(n) для деяких контейнерів, наприклад старих <code>std::list</code>.
+</details>
+
+<details>
+  <summary><b>24. Що таке exception safety guarantee? Яку exception safety guarantee мають STL-контейнери?</b></summary>
+  • Гарантія стабільності програми при виключеннях (basic, strong, noexcept).<br>
+  • STL-контейнери зазвичай гарантують strong або basic exception safety.
+</details>
+
+<details>
+  <summary><b>25. Розкажіть про типи розумних вказівників і підрахунок посилань у них?</b></summary>
+  • <code>unique_ptr</code> — виключне володіння, немає підрахунку.<br>
+  • <code>shared_ptr</code> — спільне володіння, є підрахунок посилань.<br>
+  • <code>weak_ptr</code> — слабке посилання, не впливає на лічильник <code>shared_ptr</code>.
+</details>
+
+
 
 # С
 
