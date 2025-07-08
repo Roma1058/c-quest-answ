@@ -967,6 +967,49 @@ DLL-файли можуть бути зареєстровані в систем�
   • <code>ps</code>, <code>top</code>, <code>kill</code> — робота з процесами
 </details>
 
+# SCM/CI/CD
+
+<details>
+  <summary><b>1. Які є види SCM?</b></summary>
+  • SCM (Source Control Management) буває централізованим (CVS, Subversion) та розподіленим (Git, Mercurial).<br>
+  • Розподілений дозволяє кожному мати повну копію історії.
+</details>
+
+<details>
+  <summary><b>2. Для чого використовують системи контролю версій?</b></summary>
+  • Для відстеження змін у коді з можливістю повернення до попередніх версій.<br>
+  • Для спільної роботи команди та вирішення конфліктів.
+</details>
+
+<details>
+  <summary><b>3. Які є команди git?</b></summary>
+  • <code>git init</code>, <code>git clone</code>, <code>git add</code>, <code>git commit</code> — базові.<br>
+  • <code>git status</code>, <code>git log</code> — перегляд стану та історії.<br>
+  • <code>git pull</code>, <code>git push</code>, <code>git fetch</code> — для роботи з віддаленим репозиторієм.<br>
+  • <code>git merge</code>, <code>git rebase</code> — для інтеграції змін.
+</details>
+
+<details>
+  <summary><b>4. Які етапи під час коміту змін?</b></summary>
+  • Створення або зміна файлів.<br>
+  • <code>git add</code> — додавання у staging area.<br>
+  • <code>git commit</code> — збереження в локальну історію репозиторія.
+</details>
+
+<details>
+  <summary><b>5. Різниця між git fetch і git pull?</b></summary>
+  • <code>git fetch</code> — отримує зміни з віддаленого репозиторія, але не зливає їх у вашу гілку.<br>
+  • <code>git pull</code> = <code>git fetch</code> + <code>git merge</code> — одразу інтегрує зміни у поточну гілку.
+</details>
+
+<details>
+  <summary><b>6. Які є етапи вирішення merge conflict?</b></summary>
+  • Виявити конфлікти після <code>merge</code> або <code>rebase</code>.<br>
+  • Відредагувати файли вручну.<br>
+  • <code>git add</code> для відзначення конфлікту як вирішеного.<br>
+  • <code>git commit</code> для завершення злиття.
+</details>
+
 
 # STL/Algorithms
 
