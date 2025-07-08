@@ -902,6 +902,72 @@ DLL-файли можуть бути зареєстровані в систем�
   • Відокремлює алгоритм від структури даних.
 </details>
 
+# OS/Linux
+
+<details>
+  <summary><b>1. Що таке менеджер пакетів?</b></summary>
+  • Це програма для автоматизованого встановлення, оновлення та видалення програмного забезпечення.<br>
+  • Також вирішує залежності між пакетами.
+</details>
+
+<details>
+  <summary><b>2. Які бувають менеджери пакетів?</b></summary>
+  • <code>apt</code> (Debian, Ubuntu), <code>yum/dnf</code> (RedHat, Fedora), <code>zypper</code> (openSUSE), <code>pacman</code> (Arch), <code>snap</code>, <code>flatpak</code>.
+</details>
+
+<details>
+  <summary><b>3. Які бувають дистрибутиви Linux?</b></summary>
+  • Debian, Ubuntu, Fedora, Arch Linux, openSUSE, CentOS, Manjaro, Mint.<br>
+  • Відрізняються менеджерами пакетів, політикою оновлень, цільовими користувачами.
+</details>
+
+<details>
+  <summary><b>4. Що таке PID?</b></summary>
+  • Process ID — унікальний ідентифікатор процесу у системі.<br>
+  • Використовується ОС для управління процесами.
+</details>
+
+<details>
+  <summary><b>5. Для чого використовують файлові дескриптори?</b></summary>
+  • Для представлення відкритих файлів, сокетів, pipe тощо.<br>
+  • Це цілі числа, через які програма взаємодіє з ресурсами ОС.
+</details>
+
+<details>
+  <summary><b>6. Розкажіть про стандартні файлові дескриптори процесу.</b></summary>
+  • <code>0</code> — stdin (ввід)<br>
+  • <code>1</code> — stdout (вивід)<br>
+  • <code>2</code> — stderr (вивід помилок)
+</details>
+
+<details>
+  <summary><b>7. Що таке Pipe?</b></summary>
+  • Це механізм передачі даних між процесами через пам’ять ОС (анонімальний pipe).<br>
+  • З’єднує stdout одного процесу зі stdin іншого.
+</details>
+
+<details>
+  <summary><b>8. Що таке Named Pipe?</b></summary>
+  • Це спеціальний файл (FIFO), який дозволяє різним процесам обмінюватися даними.<br>
+  • Зберігається у файловій системі, існує незалежно від процесів.
+</details>
+
+<details>
+  <summary><b>9. Що таке UID?</b></summary>
+  • User ID — унікальний числовий ідентифікатор користувача у Linux/Unix.<br>
+  • Використовується для контролю доступу до файлів та процесів.
+</details>
+
+<details>
+  <summary><b>10. Розкажіть про команди bash.</b></summary>
+  • <code>cd</code> — змінити директорію<br>
+  • <code>ls</code> — переглянути файли<br>
+  • <code>cp</code>, <code>mv</code>, <code>rm</code> — копіювання, переміщення, видалення<br>
+  • <code>grep</code>, <code>awk</code>, <code>sed</code> — обробка тексту<br>
+  • <code>ps</code>, <code>top</code>, <code>kill</code> — робота з процесами
+</details>
+
+
 # STL/Algorithms
 
 <details>
